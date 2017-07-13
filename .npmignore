@@ -1,0 +1,15 @@
+.*.swp
+._*
+.DS_Store
+.git
+.hg
+.lock-wscript
+.svn
+.wafpickle-*
+CVS
+npm-debug.log
+node_modules/
+.DS_store
+.module-cache
+npm-debug.log
+.c9

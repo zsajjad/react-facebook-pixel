@@ -1,0 +1,96 @@
+{
+  "name": "react-facebook-pixel",
+  "version": "0.1.0",
+  "description": "Pixel Kit for React",
+  "main": "dist/fb-pixel.js",
+  "scripts": {
+    "start": "export NODE_ENV=development&& webpack-dev-server --config webpack.config.dev.js",
+    "bundle": "export NODE_ENV=production&& webpack -p --config webpack.config.dist.js",
+    "lint": "eslint src/ --fix",
+    "clean": "rm -rf node_modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsajjad/react-facebook-pixel.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-component",
+    "pixel",
+    "facebook-pixel"
+  ],
+  "author": {
+    "name": "Zain Sajjad",
+    "email": "zsajjad93@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zsajjad/react-facebook-pixel/issues"
+  },
+  "homepage": "https://github.com/zsajjad/react-facebook-pixel",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "6.7.7",
+    "babel": "6.23.0",
+    "babel-core": "6.24.1",
+    "babel-eslint": "7.2.2",
+    "babel-loader": "6.4.1",
+    "babel-plugin-transform-react-constant-elements": "6.23.0",
+    "babel-plugin-transform-react-inline-elements": "6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.1",
+    "babel-preset-es2015": "6.24.0",
+    "babel-preset-react": "6.23.0",
+    "chai": "3.5.0",
+    "chai-jquery": "2.0.0",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-react": "6.10.3",
+    "jsdom": "9.12.0",
+    "mocha": "3.2.0",
+    "react": "^15.5.0",
+    "react-dom": "^15.5.0",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.4.2"
+  },
+  "peerDependencies": {},
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          [
+            "es2015",
+            {
+              "modules": false
+            }
+          ],
+          "react"
+        ]
+      },
+      "test": {
+        "presets": [
+          "es2015",
+          "react"
+        ]
+      },
+      "production": {
+        "presets": [
+          [
+            "es2015",
+            {
+              "modules": false
+            }
+          ],
+          "react"
+        ],
+        "plugins": [
+          "transform-react-remove-prop-types",
+          "transform-react-constant-elements",
+          "transform-react-inline-elements"
+        ]
+      }
+    }
+  }
+}
