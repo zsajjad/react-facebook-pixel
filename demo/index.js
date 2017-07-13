@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactPixel from '../src/index';
 
-ReactPixel.init('1052691598191002');
+ReactPixel.init('yourPixelIdGoesHere');
 ReactPixel.pageView();
 
 ReactDOM.render(
