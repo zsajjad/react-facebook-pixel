@@ -19,9 +19,9 @@ yarn add react-facebook-pixel
 import ReactPixel from 'react-facebook-pixel';
 ReactPixel.init('yourPixelIdGoesHere');
 
-React.pageView(); // For tracking page view
-React.track( event, data ) // For tracking default events, more info about events and data https://developers.facebook.com/docs/ads-for-websites/pixel-events/v2.9
-React.trackCustom( event, data ) // For tracking custom events
+ReactPixel.pageView(); // For tracking page view
+ReactPixel.track( event, data ) // For tracking default events, more info about events and data https://developers.facebook.com/docs/ads-for-websites/pixel-events/v2.9
+ReactPixel.trackCustom( event, data ) // For tracking custom events
 ```
 
 ## Dev Server
