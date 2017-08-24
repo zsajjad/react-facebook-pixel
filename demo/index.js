@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactPixel from '../src/index';
 
-ReactPixel.init('yourPixelIdGoesHere');
+ReactPixel.init('161555241062572', { debug: true, autoConfig: false });
 ReactPixel.pageView();
+ReactPixel.fbq('track', 'PageView');
 
 ReactDOM.render(
   <div>

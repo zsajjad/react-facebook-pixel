@@ -5,21 +5,35 @@
  * @author  Zain Sajjad <zsajjad@fetchsky.com>
  */
 
-var initialized = false
+//
+let initialized = false;
+let debug = false;
 
-/** 
+/**
  * Utilities
  */
 
-var _verifyInit = function () {
+const verifyInit = () => {
   if (!initialized) {
     console.warn('Pixel not initialized before using call ReactPixel.init with required params');
   }
   return initialized;
-}
+};
 
-var ReactPixel = {
-  init: function (pixelId) {
+//
+const log = (...args) => {
+  console.info(...['[react-facebook-pixel]'].concat(args));
+};
+
+//
+const defaultOptions = {
+  autoConfig: true,
+  debug: false
+};
+
+//
+export default {
+  init(pixelId, options = defaultOptions) {
     /* eslint-disable */
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
@@ -36,39 +50,75 @@ var ReactPixel = {
 
     if (!pixelId) {
       console.warn('Please insert pixel id for initializing');
-      return;
     } else {
-      fbq('init', pixelId);
+      if (options.autoConfig === false) {
+        fbq('set', 'autoConfig', false, pixelId); // eslint-disable-line no-undef
+      }
+
+      fbq('init', pixelId); // eslint-disable-line no-undef
+
       initialized = true;
+      debug = options.debug;
     }
   },
 
-  pageView: function () {
-    if (!_verifyInit()) {
+  pageView() {
+    if (!verifyInit()) {
       return;
     }
-    fbq('track', 'PageView');
+
+    fbq('track', 'PageView'); // eslint-disable-line no-undef
+
+    if (debug) {
+      log('called fbq(\'track\', \'PageView\');');
+    }
   },
 
-  track: function (title, data) {
-    if (!_verifyInit()) {
+  track(title, data) {
+    if (!verifyInit()) {
       return;
     }
-    fbq('track', title, data);
+
+    fbq('track', title, data); // eslint-disable-line no-undef
+
+    if (debug) {
+      log(`called fbq('track', '${title}');`);
+
+      if (data) {
+        log('with data', data);
+      }
+    }
   },
 
-  trackCustom: function (event, data) {
-    if (!_verifyInit()) {
+  trackCustom(event, data) {
+    if (!verifyInit()) {
       return;
     }
-    fbq('trackCustom', event, data);
+
+    fbq('trackCustom', event, data); // eslint-disable-line no-undef
+
+    if (debug) {
+      log(`called fbq('trackCustom', '${event}');`);
+
+      if (data) {
+        log('with data', data);
+      }
+    }
   },
 
-  fbq: function () {
-    if (!_verifyInit()) {
+  fbq(...args) {
+    if (!verifyInit()) {
       return;
     }
-    return fbq
+
+    fbq(...args); // eslint-disable-line no-undef
+
+    if (debug) {
+      log(`called fbq('${args.slice(0, 2).join('\', \'')}')`);
+
+      if (args[2]) {
+        log('with data', args[2]);
+      }
+    }
   },
-}
-module.exports = ReactPixel;
+};
