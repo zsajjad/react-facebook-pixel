@@ -33,7 +33,7 @@ const defaultOptions = {
 
 //
 export default {
-  init(pixelId, options = defaultOptions) {
+  init(pixelId, advancedMatching = {}, options = defaultOptions) {
     /* eslint-disable */
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
@@ -55,7 +55,7 @@ export default {
         fbq('set', 'autoConfig', false, pixelId); // eslint-disable-line no-undef
       }
 
-      fbq('init', pixelId); // eslint-disable-line no-undef
+      fbq('init', pixelId, advancedMatching); // eslint-disable-line no-undef
 
       initialized = true;
       debug = options.debug;

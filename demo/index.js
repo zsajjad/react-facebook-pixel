@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactPixel from '../src/index';
 
-ReactPixel.init('facebook_pixel_id', { debug: true, autoConfig: false });
+ReactPixel.init('facebook_pixel_id', {}, { debug: true, autoConfig: false });
 ReactPixel.pageView();
 ReactPixel.fbq('track', 'PageView');
 
