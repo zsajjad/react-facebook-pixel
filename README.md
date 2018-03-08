@@ -28,7 +28,7 @@ ReactPixel.trackCustom( event, data ) // For tracking custom events
   ...
   componentDidMount() {
     const ReactPixel =  require('react-facebook-pixel');
-    ReactPixel.init('886158241544879');
+    ReactPixel.init('yourPixelIdGoesHere');
   }
   ...
 ```
