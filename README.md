@@ -17,12 +17,21 @@ yarn add react-facebook-pixel
 ## How to use
 ```js
 import ReactPixel from 'react-facebook-pixel';
-ReactPixel.init('yourPixelIdGoesHere');
 
-ReactPixel.pageView(); // For tracking page view
-ReactPixel.track( event, data ) // For tracking default events, more info about events and data https://developers.facebook.com/docs/ads-for-websites/pixel-events/v2.9
-ReactPixel.trackCustom( event, data ) // For tracking custom events
+
+const advancedMatching = { em: 'some@email.com' }; // optional, more info: https://developers.facebook.com/docs/facebook-pixel/pixel-with-ads/conversion-tracking#advanced_match
+const options = {
+	autoConfig: true, 	// set pixel's autoConfig
+    debug: false, 		// enable logs
+};
+ReactPixel.init('yourPixelIdGoesHere', advancedMatching, options);
+
+ReactPixel.pageView(); 					// For tracking page view
+ReactPixel.track( event, data ) 		// For tracking default events, more info about events and data https://developers.facebook.com/docs/ads-for-websites/pixel-events/v2.9
+ReactPixel.trackCustom( event, data ) 	// For tracking custom events
 ```
+
+
 
 ## Dev Server
 ```
