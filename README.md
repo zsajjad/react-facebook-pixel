@@ -30,6 +30,17 @@ ReactPixel.pageView(); 					// For tracking page view
 ReactPixel.track( event, data ) 		// For tracking default events, more info about events and data https://developers.facebook.com/docs/ads-for-websites/pixel-events/v2.9
 ReactPixel.trackCustom( event, data ) 	// For tracking custom events
 ```
+**if you're bundling in CI**
+```js
+  ...
+  componentDidMount() {
+    const ReactPixel =  require('react-facebook-pixel');
+    ReactPixel.init('yourPixelIdGoesHere');
+  }
+  ...
+```
+otherwise CI will complain there's no `window`.
+
 
 
 
