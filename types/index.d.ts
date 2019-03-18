@@ -23,7 +23,7 @@ export interface Data {
 export interface AddPaymentInfo extends Data {
     content_category?: string;
     content_ids?: string[];
-    contents?: string;
+    contents?: object[];
     currency?: string;
     value?: number;
 }
@@ -32,7 +32,7 @@ export interface AddToCart extends Data {
     content_ids: string[];
     content_name?: string;
     content_type: string;
-    contents: string;
+    contents: object[];
     currency?: string;
     value?: number;
 }
@@ -41,7 +41,7 @@ export interface AddToWishlist extends Data {
     content_name?: string;
     content_category?: string;
     content_ids?: string[];
-    contents?: string;
+    contents?: object[];
     currency?: string;
     value?: number;
 }
@@ -50,7 +50,7 @@ export interface AddToWishlist extends Data {
     content_name?: string;
     content_category?: string;
     content_ids?: string[];
-    contents?: string;
+    contents?: object[];
     currency?: string;
     value?: number;
 }
@@ -65,7 +65,7 @@ export interface CompleteRegistration extends Data {
 export interface InitiateCheckout extends Data {
     content_category?: string;
     content_ids?: string[];
-    contents?: string;
+    contents?: object[];
     currency?: string;
     num_items?: number;
     value?: number;
@@ -82,7 +82,7 @@ export interface Purchase extends Data {
     content_ids: string[];
     content_name?: string;
     content_type: string;
-    contents: string;
+    contents: object[];
     currency: string;
     num_items?: number;
     value: number;
@@ -91,31 +91,31 @@ export interface Purchase extends Data {
 export interface Search extends Data {
     content_category?: string;
     content_ids?: string[];
-    contents?: string;
+    contents?: object[];
     currency?: string;
     search_string?: string;
-    value?:number;
+    value?: number;
 }
 
 export interface StartTrial extends Data {
-    currency?:string;
+    currency?: string;
     predicted_ltv?: number;
     value: number;
 }
 
 export interface Subscribe extends Data {
-    currency?:string;
+    currency?: string;
     predicted_ltv?: number;
     value: number;
 }
 
 export interface ViewContent extends Data {
-    content_ids:string[];
-    content_name?:string;
-    content_type:string;
-    contents:string;
-    currency?:string;
-    value?:number;
+    content_ids: string[];
+    content_name?: string;
+    content_type: string;
+    contents: object[];
+    currency?: string;
+    value?: number;
 }
 
 export function init(pixelId: string, advancedMatching?: AdvancedMatching, options?: Options): void;
