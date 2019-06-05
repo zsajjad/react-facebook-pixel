@@ -124,5 +124,3 @@ export function track(title: string, data: Data | any): void;
 export function trackCustom(title: string, data: Data | any): void;
 export function trackSingle(pixel: string, title: string, data: Data | any): void;
 export function trackSingleCustom(pixel: string, title: string, data: Data | any): void;
-
-// the reason for the Data | any typing of the data parameter is the distinct lack of any concrete information in the reference at https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking about the typing of these objects.
