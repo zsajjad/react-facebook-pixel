@@ -1,4 +1,5 @@
-# react-facebook-pixel
+# React Facebook Pixel
+[![npm](https://img.shields.io/npm/dm/react-facebook-pixel.svg)](https://www.npmjs.com/package/react-facebook-pixel)
 
 > React JS wrapper for [Facebook's Pixel](https://developers.facebook.com/docs/ads-for-websites/pixel-events/v2.9)
 
