@@ -120,5 +120,5 @@ export interface ViewContent extends Data {
 
 export function init(pixelId: string, advancedMatching?: AdvancedMatching, options?: Options): void;
 export function pageView(): void;
-export function track(title: string, data: Data | any): void;
-export function trackCustom(title: string, data: Data | any): void;
+export function track(title: string, data?: Data | any): void;
+export function trackCustom(title: string, data?: Data | any): void;
