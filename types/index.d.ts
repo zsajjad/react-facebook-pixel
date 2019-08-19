@@ -122,3 +122,4 @@ export function init(pixelId: string, advancedMatching?: AdvancedMatching, optio
 export function pageView(): void;
 export function track(title: string, data: Data | any): void;
 export function trackCustom(title: string, data: Data | any): void;
+export function fbq(...args: Array<unknown>): void;
