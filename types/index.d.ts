@@ -124,3 +124,4 @@ export function track(title: string, data: Data | any): void;
 export function trackCustom(title: string, data: Data | any): void;
 export function trackSingle(pixel: string, title: string, data: Data | any): void;
 export function trackSingleCustom(pixel: string, title: string, data: Data | any): void;
+export function fbq(...args: Array<unknown>): void;
