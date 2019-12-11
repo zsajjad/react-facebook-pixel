@@ -2,10 +2,9 @@
  * React Facebook Pixel Module
  *
  * @package react-facebook-pixel
- * @author  Zain Sajjad <zsajjad@fetchsky.com>
+ * @author  Zain Sajjad <zsajjad93@gmail.com>
  */
 
-//
 let initialized = false;
 let debug = false;
 
@@ -13,43 +12,76 @@ let debug = false;
  * Utilities
  */
 
+/**
+ * Warn
+ * @param  {...any} args
+ */
+const warn = (...args) => {
+  if (!debug) {
+    return;
+  }
+  // eslint-disable-next-line no-console
+  console.info(...['[react-facebook-pixel]'].concat(args));
+};
+
+/**
+ * Log
+ * @param  {...any} args
+ */
+const log = (...args) => {
+  if (!debug) {
+    return;
+  }
+  // eslint-disable-next-line no-console
+  console.info(...['[react-facebook-pixel]'].concat(args));
+};
+
 const verifyInit = () => {
   if (!initialized) {
-    console.warn('Pixel not initialized before using call ReactPixel.init with required params');
+    warn(
+      'Pixel not initialized before using call ReactPixel.init with required params',
+    );
   }
   return initialized;
 };
 
 //
-const log = (...args) => {
-  console.info(...['[react-facebook-pixel]'].concat(args));
-};
-
-//
 const defaultOptions = {
   autoConfig: true,
-  debug: false
+  debug: false,
 };
 
 //
 export default {
   init(pixelId, advancedMatching = {}, options = defaultOptions) {
     /* eslint-disable */
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    !(function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
       };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      'script',
+      'https://connect.facebook.net/en_US/fbevents.js',
+    );
     /* eslint-enable */
 
     if (!pixelId) {
-      console.warn('Please insert pixel id for initializing');
+      warn('Please insert pixel id for initializing');
     } else {
       if (options.autoConfig === false) {
         fbq('set', 'autoConfig', false, pixelId); // eslint-disable-line no-undef
@@ -70,7 +102,7 @@ export default {
     fbq('track', 'PageView'); // eslint-disable-line no-undef
 
     if (debug) {
-      log('called fbq(\'track\', \'PageView\');');
+      log("called fbq('track', 'PageView');");
     }
   },
 
@@ -146,7 +178,7 @@ export default {
     fbq(...args); // eslint-disable-line no-undef
 
     if (debug) {
-      log(`called fbq('${args.slice(0, 2).join('\', \'')}')`);
+      log(`called fbq('${args.slice(0, 2).join("', '")}')`);
 
       if (args[2]) {
         log('with data', args[2]);

@@ -4,10 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   devtool: 'eval',
   entry: {
-    demo: [
-      'webpack/hot/dev-server',
-      './demo/index.js',
-    ],
+    demo: ['webpack/hot/dev-server', './demo/index.js'],
   },
   output: {
     path: path.join(__dirname, 'demo'),
@@ -15,15 +12,15 @@ module.exports = {
     publicPath: '/',
   },
   module: {
-    rules: [{
-      use: 'babel-loader',
-      test: /\.js$/,
-      exclude: /node_modules/,
-    }],
+    rules: [
+      {
+        use: 'babel-loader',
+        test: /\.js$/,
+        exclude: /node_modules/,
+      },
+    ],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   resolve: {
     extensions: ['*', '.js'],
   },
@@ -32,6 +29,6 @@ module.exports = {
     historyApiFallback: true,
     compress: false,
     host: process.env.IP || '0.0.0.0',
-    port: parseInt(process.env.PORT) || 8080,
+    port: parseInt(process.env.PORT, 10) || 8080,
   },
 };
