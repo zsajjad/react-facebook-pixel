@@ -5,7 +5,8 @@
  * @author  Zain Sajjad <zsajjad93@gmail.com>
  */
 
-let initialized = false;
+//
+let initialized = !!window.fbq;
 let debug = false;
 
 /**
