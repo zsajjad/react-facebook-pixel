@@ -90,6 +90,22 @@ export default {
     }
   },
 
+  trackSingle(pixel, title, data) {
+    if (!verifyInit()) {
+      return;
+    }
+
+    fbq('trackSingle', pixel, title, data); // eslint-disable-line no-undef
+
+    if (debug) {
+      log(`called fbq('trackSingle', '${pixel}', '${title}');`);
+
+      if (data) {
+        log('with data', data);
+      }
+    }
+  },
+
   trackCustom(event, data) {
     if (!verifyInit()) {
       return;
@@ -99,6 +115,22 @@ export default {
 
     if (debug) {
       log(`called fbq('trackCustom', '${event}');`);
+
+      if (data) {
+        log('with data', data);
+      }
+    }
+  },
+
+  trackSingleCustom(pixel, event, data) {
+    if (!verifyInit()) {
+      return;
+    }
+
+    fbq('trackSingle', pixel, event, data); // eslint-disable-line no-undef
+
+    if (debug) {
+      log(`called fbq('trackSingleCustom', '${pixel}', '${event}');`);
 
       if (data) {
         log('with data', data);
