@@ -1,7 +1,7 @@
 # React Facebook Pixel
 [![npm](https://img.shields.io/npm/dm/react-facebook-pixel.svg)](https://www.npmjs.com/package/react-facebook-pixel)
 
-> React JS wrapper for [Facebook's Pixel](https://developers.facebook.com/docs/ads-for-websites/pixel-events/v2.9)
+> React JS wrapper for [Facebook's Pixel](https://developers.facebook.com/docs/facebook-pixel)
 
 
 ## Install
@@ -15,6 +15,11 @@ yarn add react-facebook-pixel
 
 ```
 
+**Typescript**
+
+Type definitions are included in this repository in the types/index.d.ts file.
+
+
 ## How to use
 ```js
 import ReactPixel from 'react-facebook-pixel';
@@ -27,9 +32,11 @@ const options = {
 };
 ReactPixel.init('yourPixelIdGoesHere', advancedMatching, options);
 
-ReactPixel.pageView(); 					// For tracking page view
-ReactPixel.track( event, data ) 		// For tracking default events, more info about events and data https://developers.facebook.com/docs/ads-for-websites/pixel-events/v2.9
-ReactPixel.trackCustom( event, data ) 	// For tracking custom events
+ReactPixel.pageView();                                    // For tracking page view
+ReactPixel.track( event, data )                           // For tracking default events, more info about events and data https://developers.facebook.com/docs/ads-for-websites/pixel-events/v2.9
+ReactPixel.trackSingle( 'PixelId', event, data )          // For tracking default events, more info about events and data https://developers.facebook.com/docs/ads-for-websites/pixel-events/v2.9
+ReactPixel.trackCustom( event, data ) 	                  // For tracking custom events
+ReactPixel.trackSingleCustom( 'PixelId', event, data ) 	  // For tracking custom events
 ```
 **if you're bundling in CI**
 ```js
@@ -41,8 +48,6 @@ ReactPixel.trackCustom( event, data ) 	// For tracking custom events
   ...
 ```
 otherwise CI will complain there's no `window`.
-
-
 
 
 ## Dev Server
