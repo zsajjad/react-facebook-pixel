@@ -20,25 +20,32 @@ export interface Data {}
 
 export interface AddPaymentInfo extends Data {
   content_category?: string;
-  content_ids?: string[] | string;
+  content_ids?: object[] | object;
   contents?: object[];
   currency?: string;
   value?: number;
 }
 
-export interface AddToCart extends Data {
-  content_ids: string[] | string;
+/**
+ * content_type required and at least one of content_ids or contents required
+ * this version is compatible with dynamic ads
+ */
+export interface DynamicAdAddToCart extends Data {
+  content_ids?: object[] | object;
   content_name?: string;
   content_type: string;
-  contents: object[];
+  contents?: object[];
   currency?: string;
   value?: number;
 }
 
-export interface AddToWishlist extends Data {
+/**
+ * this version is not compatible with dynamic ads
+ */
+export interface AddToCart extends Data {
+  content_ids?: object[] | object;
   content_name?: string;
-  content_category?: string;
-  content_ids?: string[] | string;
+  content_type?: string;
   contents?: object[];
   currency?: string;
   value?: number;
@@ -47,7 +54,16 @@ export interface AddToWishlist extends Data {
 export interface AddToWishlist extends Data {
   content_name?: string;
   content_category?: string;
-  content_ids?: string[] | string;
+  content_ids?: object[] | object;
+  contents?: object[];
+  currency?: string;
+  value?: number;
+}
+
+export interface AddToWishlist extends Data {
+  content_name?: string;
+  content_category?: string;
+  content_ids?: object[] | object;
   contents?: object[];
   currency?: string;
   value?: number;
@@ -62,7 +78,7 @@ export interface CompleteRegistration extends Data {
 
 export interface InitiateCheckout extends Data {
   content_category?: string;
-  content_ids?: string[] | string;
+  content_ids?: object[] | object;
   contents?: object[];
   currency?: string;
   num_items?: number;
@@ -76,11 +92,28 @@ export interface Lead extends Data {
   value?: number;
 }
 
-export interface Purchase extends Data {
-  content_ids: string[] | string;
+/**
+ * content_type required and at least one of content_ids or contents required
+ * this version is compatible with dynamic ads
+ */
+export interface DynamicAdPurchase extends Data {
+  content_ids?: object[] | object;
   content_name?: string;
   content_type: string;
-  contents: object[];
+  contents?: object[];
+  currency: string;
+  num_items?: number;
+  value: number;
+}
+
+/**
+ * this version is not compatible with dynamic ads
+ */
+export interface Purchase extends Data {
+  content_ids?: object[] | object;
+  content_name?: string;
+  content_type?: string;
+  contents?: object[];
   currency: string;
   num_items?: number;
   value: number;
@@ -88,7 +121,7 @@ export interface Purchase extends Data {
 
 export interface Search extends Data {
   content_category?: string;
-  content_ids?: string[] | string;
+  content_ids?: object[] | object;
   contents?: object[];
   currency?: string;
   search_string?: string;
@@ -107,11 +140,27 @@ export interface Subscribe extends Data {
   value: number;
 }
 
-export interface ViewContent extends Data {
-  content_ids: string[] | string;
+/**
+ * content_type required and at least one of content_ids or contents required
+ * this version is compatible with dynamic ads
+ */
+export interface DynamicAdViewContent extends Data {
+  content_ids?: string[] | string;
   content_name?: string;
   content_type: string;
-  contents: object[];
+  contents?: object[];
+  currency?: string;
+  value?: number;
+}
+
+/**
+ * this version is not compatible with dynamic ads
+ */
+export interface ViewContent extends Data {
+  content_ids?: string[] | string;
+  content_name?: string;
+  content_type?: string;
+  contents?: object[];
   currency?: string;
   value?: number;
 }
