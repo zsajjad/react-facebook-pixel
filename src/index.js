@@ -171,6 +171,30 @@ export default {
     }
   },
 
+  grantConsent() {
+    if (!verifyInit()) {
+      return;
+    }
+
+    fbq('consent', 'grant');
+
+    if (debug) {
+      log(`called fbq('consent', 'grant');`);
+    }
+  },
+
+  revokeConsent() {
+    if (!verifyInit()) {
+      return;
+    }
+
+    fbq('consent', 'revoke');
+
+    if (debug) {
+      log(`called fbq('consent', 'revoke');`);
+    }
+  },
+
   fbq(...args) {
     if (!verifyInit()) {
       return;
