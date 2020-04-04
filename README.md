@@ -50,6 +50,19 @@ if you're bundling in CI
 
 otherwise CI will complain there's no `window`.
 
+if you want to be GDPR compliant, revoke the consent right after init and grant it when the user accepts to be tracked
+
+```js
+  ...
+  ReactPixel.init('yourPixelIdGoesHere', advancedMatching, options);
+  ReactPixel.revokeConsent();
+  ...
+
+  ...
+  <button onClick={ReactPixel.grantConsent}>Accept cookies</button>.
+  ...
+```
+
 ## Dev Server
 
 ```bash
