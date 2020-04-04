@@ -50,7 +50,9 @@ if you're bundling in CI
 
 otherwise CI will complain there's no `window`.
 
-if you want to be GDPR compliant, revoke the consent right after init and grant it when the user accepts to be tracked
+## GDPR Compliance
+
+To be GDPR compliant, revoke the consent right after init and grant it when the user accepts to be tracked
 
 ```js
   ...
