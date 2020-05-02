@@ -184,3 +184,5 @@ export function trackSingleCustom(
   data?: Data | any,
 ): void;
 export function fbq(...args: Array<unknown>): void;
+export function revokeConsent(): void;
+export function grantConsent(): void;
