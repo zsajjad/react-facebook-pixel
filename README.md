@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install react-facebook-pixel
+npm install --save react-facebook-pixel
 
 ```
 
