@@ -7,14 +7,14 @@
 ## Install
 
 ```bash
-npm install --save react-facebook-pixel
+npm install --save @zsajjad/react-facebook-pixel
 
 ```
 
 or
 
 ```bash
-yarn add react-facebook-pixel
+yarn add @zsajjad/react-facebook-pixel
 
 ```
 
@@ -22,14 +22,14 @@ yarn add react-facebook-pixel
 
 React Facebook Pixel is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial
 
-<a href="https://tracking.gitads.io/?repo=YOUR_REPO">
- <img src="https://images.gitads.io/YOUR_REPO" alt="GitAds"/>
+<a href="https://tracking.gitads.io/?repo=react-facebook-pixel" target="_blank">
+ <img src="https://images.gitads.io/react-facebook-pixel" alt="GitAds"/>
 </a>
 
 ## How to use
 
 ```js
-import ReactPixel from 'react-facebook-pixel';
+import ReactPixel from '@zsajjad/react-facebook-pixel';
 
 const advancedMatching = { em: 'some@email.com' }; // optional, more info: https://developers.facebook.com/docs/facebook-pixel/advanced/advanced-matching
 const options = {
@@ -50,7 +50,7 @@ if you're bundling in CI
 ```js
   ...
   componentDidMount() {
-    const ReactPixel =  require('react-facebook-pixel');
+    const ReactPixel =  require('@zsajjad/react-facebook-pixel');
     ReactPixel.init('yourPixelIdGoesHere');
   }
   ...

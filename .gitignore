@@ -5,4 +5,3 @@ npm-debug.log
 .c9
 package-lock.json
 .vscode/
-dist/
