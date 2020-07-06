@@ -1,5 +1,5 @@
 {
-  "name": "react-facebook-pixel",
+  "name": "@zsajjad/react-facebook-pixel",
   "version": "1.0.0",
   "description": "Pixel Kit for React",
   "main": "dist/fb-pixel.js",
@@ -12,11 +12,10 @@
     "clean": "rm -rf node_modules",
     "prettify": "prettier --write"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zsajjad/react-facebook-pixel.git"
+  "repository": "git://github.com/zsajjad/react-facebook-pixel.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "keywords": [
     "react",
     "reactjs",
