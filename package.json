@@ -16,6 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/zsajjad/react-facebook-pixel.git"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "keywords": [
     "react",
     "reactjs",
