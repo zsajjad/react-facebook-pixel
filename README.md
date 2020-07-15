@@ -7,14 +7,14 @@
 ## Install
 
 ```bash
-npm install --save @zsajjad/react-facebook-pixel
+npm install --save react-facebook-pixel
 
 ```
 
 or
 
 ```bash
-yarn add @zsajjad/react-facebook-pixel
+yarn add react-facebook-pixel
 
 ```
 
