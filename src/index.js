@@ -176,7 +176,7 @@ export default {
       return;
     }
 
-    fbq('consent', 'grant');
+    fbq('consent', 'grant'); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('consent', 'grant');`);
@@ -188,7 +188,7 @@ export default {
       return;
     }
 
-    fbq('consent', 'revoke');
+    fbq('consent', 'revoke'); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('consent', 'revoke');`);
