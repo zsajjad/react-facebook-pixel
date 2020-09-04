@@ -14,6 +14,7 @@ export interface AdvancedMatching {
   ph: string;
   st: string;
   zp: string;
+  external_id: string;
 }
 
 export interface Data {}
