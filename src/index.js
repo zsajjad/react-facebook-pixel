@@ -6,7 +6,7 @@
  */
 
 //
-let initialized = !!window.fbq;
+let initialized = (typeof window !== 'undefined') && !!window.fbq;
 let debug = false;
 
 /**
