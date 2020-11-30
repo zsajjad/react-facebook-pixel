@@ -6,7 +6,7 @@
  */
 
 //
-let initialized = !!window.fbq;
+let initialized = false;
 let debug = false;
 
 /**
@@ -55,6 +55,7 @@ const defaultOptions = {
 //
 export default {
   init(pixelId, advancedMatching = {}, options = defaultOptions) {
+    initialized = (typeof window !== 'undefined') && !!window.fbq;
     /* eslint-disable */
     !(function(f, b, e, v, n, t, s) {
       if (f.fbq) return;
