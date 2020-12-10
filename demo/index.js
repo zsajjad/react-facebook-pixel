@@ -19,6 +19,8 @@ ReactDOM.render(
           content_type: 'product',
           value: 0.5,
           currency: 'USD',
+        }, {
+          eventID: `autogen-${+new Date()}`
         })
       }
     >

@@ -171,17 +171,19 @@ export function init(
   options?: Options,
 ): void;
 export function pageView(): void;
-export function track(title: string, data?: Data | any): void;
-export function trackCustom(title: string, data?: Data | any): void;
+export function track(title: string, data?: Data | any, options?: Data | any): void;
+export function trackCustom(title: string, data?: Data | any, options?: Data | any): void;
 export function trackSingle(
   pixel: string,
   title: string,
   data?: Data | any,
+  options?: Data | any,
 ): void;
 export function trackSingleCustom(
   pixel: string,
   title: string,
   data?: Data | any,
+  options?: Data | any,
 ): void;
 export function fbq(...args: Array<unknown>): void;
 export function revokeConsent(): void;

@@ -108,66 +108,66 @@ export default {
     }
   },
 
-  track(title, data) {
+  track(title, data, options) {
     if (!verifyInit()) {
       return;
     }
 
-    fbq('track', title, data); // eslint-disable-line no-undef
+    fbq('track', title, data, options); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('track', '${title}');`);
 
       if (data) {
-        log('with data', data);
+        log('with data', data, 'and options', options);
       }
     }
   },
 
-  trackSingle(pixel, title, data) {
+  trackSingle(pixel, title, data, options) {
     if (!verifyInit()) {
       return;
     }
 
-    fbq('trackSingle', pixel, title, data); // eslint-disable-line no-undef
+    fbq('trackSingle', pixel, title, data, options); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('trackSingle', '${pixel}', '${title}');`);
 
       if (data) {
-        log('with data', data);
+        log('with data', data, 'and options', options);
       }
     }
   },
 
-  trackCustom(event, data) {
+  trackCustom(event, data, options) {
     if (!verifyInit()) {
       return;
     }
 
-    fbq('trackCustom', event, data); // eslint-disable-line no-undef
+    fbq('trackCustom', event, data, options); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('trackCustom', '${event}');`);
 
       if (data) {
-        log('with data', data);
+        log('with data', data, 'and options', options);
       }
     }
   },
 
-  trackSingleCustom(pixel, event, data) {
+  trackSingleCustom(pixel, event, data, options) {
     if (!verifyInit()) {
       return;
     }
 
-    fbq('trackSingle', pixel, event, data); // eslint-disable-line no-undef
+    fbq('trackSingle', pixel, event, data, options); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('trackSingleCustom', '${pixel}', '${event}');`);
 
       if (data) {
-        log('with data', data);
+        log('with data', data, 'and options', options);
       }
     }
   },
@@ -177,7 +177,7 @@ export default {
       return;
     }
 
-    fbq('consent', 'grant');
+    fbq('consent', 'grant'); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('consent', 'grant');`);
@@ -189,7 +189,7 @@ export default {
       return;
     }
 
-    fbq('consent', 'revoke');
+    fbq('consent', 'revoke'); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('consent', 'revoke');`);
