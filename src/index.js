@@ -108,12 +108,12 @@ export default {
     }
   },
 
-  track(title, data) {
+  track(title, data, eventData) {
     if (!verifyInit()) {
       return;
     }
 
-    fbq('track', title, data); // eslint-disable-line no-undef
+    fbq('track', title, data, eventData); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('track', '${title}');`);
@@ -121,15 +121,18 @@ export default {
       if (data) {
         log('with data', data);
       }
+      if (eventData) {
+        log('with eventData', eventData);
+      }
     }
   },
 
-  trackSingle(pixel, title, data) {
+  trackSingle(pixel, title, data, eventData) {
     if (!verifyInit()) {
       return;
     }
 
-    fbq('trackSingle', pixel, title, data); // eslint-disable-line no-undef
+    fbq('trackSingle', pixel, title, data, eventData); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('trackSingle', '${pixel}', '${title}');`);
@@ -137,15 +140,18 @@ export default {
       if (data) {
         log('with data', data);
       }
+      if (eventData) {
+        log('with eventData', eventData);
+      }
     }
   },
 
-  trackCustom(event, data) {
+  trackCustom(event, data, eventData) {
     if (!verifyInit()) {
       return;
     }
 
-    fbq('trackCustom', event, data); // eslint-disable-line no-undef
+    fbq('trackCustom', event, data, eventData); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('trackCustom', '${event}');`);
@@ -153,21 +159,27 @@ export default {
       if (data) {
         log('with data', data);
       }
+      if (eventData) {
+        log('with eventData', eventData);
+      }
     }
   },
 
-  trackSingleCustom(pixel, event, data) {
+  trackSingleCustom(pixel, event, data, eventData) {
     if (!verifyInit()) {
       return;
     }
 
-    fbq('trackSingle', pixel, event, data); // eslint-disable-line no-undef
+    fbq('trackSingle', pixel, event, data, eventData); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('trackSingleCustom', '${pixel}', '${event}');`);
 
       if (data) {
         log('with data', data);
+      }
+      if (eventData) {
+        log('with eventData', eventData);
       }
     }
   },
