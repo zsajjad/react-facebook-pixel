@@ -4,16 +4,17 @@ export interface Options {
 }
 
 export interface AdvancedMatching {
-  ct: string;
-  country: string;
-  db: string;
-  em: string;
-  fn: string;
-  ge: string;
-  ln: string;
-  ph: string;
-  st: string;
-  zp: string;
+  ct?: string;
+  country?: string;
+  db?: string;
+  em?: string;
+  fn?: string;
+  ge?: string;
+  ln?: string;
+  ph?: string;
+  st?: string;
+  zp?: string;
+  external_id?: string;
 }
 
 export interface Data {}
