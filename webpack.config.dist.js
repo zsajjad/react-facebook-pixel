@@ -9,6 +9,7 @@ module.exports = {
     filename: 'fb-pixel.js',
     libraryTarget: 'umd',
     library: 'ReactPixel',
+    globalObject: 'this',
   },
   module: {
     rules: [
