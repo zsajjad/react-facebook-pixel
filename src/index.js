@@ -62,42 +62,45 @@ export default {
 
     initialized = window && !!window.fbq;
     /* eslint-disable */
-    !(function(f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function() {
-        n.callMethod
-          ? n.callMethod.apply(n, arguments)
-          : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = '2.0';
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(
-      window,
-      document,
-      'script',
-      'https://connect.facebook.net/en_US/fbevents.js',
-    );
-    /* eslint-enable */
+    const fbq = window?.fbq;
+    if (typeof fbq === 'undefined') {
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        'script',
+        'https://connect.facebook.net/en_US/fbevents.js',
+      );
+      /* eslint-enable */
 
-    if (!pixelId) {
-      warn('Please insert pixel id for initializing');
-    } else {
-      if (options.autoConfig === false) {
-        fbq('set', 'autoConfig', false, pixelId); // eslint-disable-line no-undef
+      if (!pixelId) {
+        warn('Please insert pixel id for initializing');
+      } else {
+        if (options.autoConfig === false) {
+          fbq('set', 'autoConfig', false, pixelId); // eslint-disable-line no-undef
+        }
+
+        fbq('init', pixelId, advancedMatching); // eslint-disable-line no-undef
+
+        initialized = true;
+        debug = options.debug;
       }
-
-      fbq('init', pixelId, advancedMatching); // eslint-disable-line no-undef
-
-      initialized = true;
-      debug = options.debug;
     }
   },
 

@@ -1,6 +1,6 @@
 {
   "name": "@juanlatorre/react-facebook-pixel",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Pixel Kit for React",
   "main": "dist/fb-pixel.js",
   "types": "./types/index.d.ts",
