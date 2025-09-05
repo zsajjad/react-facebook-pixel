@@ -96,6 +96,13 @@ export default {
     }
   },
 
+  verifyInit() {
+    if (!verifyInit()) {
+      return false;
+    }
+    return true;
+  },
+
   pageView() {
     if (!verifyInit()) {
       return;

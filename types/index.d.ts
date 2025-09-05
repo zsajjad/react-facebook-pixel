@@ -165,6 +165,8 @@ export interface ViewContent extends Data {
   value?: number;
 }
 
+export function verifyInit(): boolean;
+
 export function init(
   pixelId: string,
   advancedMatching?: AdvancedMatching,
